@@ -11,6 +11,8 @@
             <h4>Register For a free account</h4>
           </div>
           <form action="" method="post">
+            {% csrf_token %}
+            {% include 'partials/_messages.html' %}
             <div class="form-group">
               <label for="username">Username</label>
               <input
@@ -44,13 +46,17 @@
                 class="form-control"
                 id="passwordField"
               />
-              <small class="float-right">SHOW</small>
             </div>
+            <small class="showpassword" style="cursor: pointer; ;">SHOW</small>
+            <br>
+          
             <input
-              type="submit"
-              value="Register"
-              class="btn btn-block btn-primary"
+            type="submit"
+            value="Register"
+            class="btn btn-block btn-primary"
             />
+          
+         
           </form>
         </div>
       </div>

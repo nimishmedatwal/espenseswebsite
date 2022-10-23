@@ -48,3 +48,9 @@
         white-space: nowrap;
         -webkit-overflow-scrolling: touch;
       }
+
+      .showpassword:hover{
+        cursor: pointer;
+        transform: scale(1.2);
+      }
+      
