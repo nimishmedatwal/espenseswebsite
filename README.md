@@ -1,2 +1,2 @@
 # MindYourMoney
-Helps you track your Expenses and Income.
+Helps you track your Expenses and Income .
