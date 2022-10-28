@@ -49,8 +49,13 @@
         -webkit-overflow-scrolling: touch;
       }
 
-      .showpassword:hover{
-        cursor: pointer;
-        transform: scale(1.2);
+      .registerform{
+        margin-top: 10%;
+        margin-left: 5%;
+
+      }
+      
+      .registerform label{
+        margin-top: 5%;
       }
       

@@ -133,3 +133,13 @@ STATICFILES_DIRS = [os.path.join(BASE_DIR, 'expenseswebsite/static')]
 MESSAGE_TAGS= {
     messages.ERROR: 'danger'
 }
+
+# email stuff
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_HOST_USER = 'verifydjango1@gmail.com'
+EMAIL_USE_TLS = True
+DEFAULT_FROM_EMAIL = 'verifydjango1@gmail.com'
+EMAIL_PORT = 587
+EMAIL_HOST_PASSWORD = 'zpmvvcwrcpmyoyqc'
+# print(EMAIL_HOST,"hello")
