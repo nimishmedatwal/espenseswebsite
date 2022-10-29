@@ -6,7 +6,7 @@ const showpassword=document.querySelector(".showpassword");
 const submitBtn=document.querySelector(".submit-btn");
 const confirmpasswordField = document.querySelector("#conpasswordField");
 const passfeedback=document.querySelector(".passfeedback");
-console.log("code is working")
+
 const handleToggleInput = (e) => {
     if (e.target.classList.contains("showpassword")) {
         if (showpassword.textContent === "SHOW") {
@@ -47,7 +47,9 @@ emailField.addEventListener("keyup", (e) => {
           emailField.classList.remove("is-invalid");
           emailField.classList.add("is-valid");
           emailfeedbackArea.style.display = "none";
-          submitBtn.removeAttribute("disabled");
+          if(confirmpasswordField==passwordField && data.username_valid && data.email_valid){
+            submitBtn.removeAttribute("disabled");
+          }
         }
       });
   }
@@ -67,7 +69,9 @@ confirmpasswordField.addEventListener("keyup", (e) => {
       confirmpasswordField.classList.remove("is-invalid");
       confirmpasswordField.classList.add("is-valid");
       passfeedback.style.display = "none";
-      submitBtn.removeAttribute("disabled");
+      if(confirmpasswordField==passwordField && data.username_valid && data.email_valid){
+        submitBtn.removeAttribute("disabled");
+      }
     }
   }
 });
@@ -95,7 +99,9 @@ usernameField.addEventListener("keyup", (e) => {
           usernameField.classList.remove("is-invalid");
           usernameField.classList.add("is-valid");
           feedbackArea.style.display = "none";
-          submitBtn.removeAttribute("disabled");  
+          if(confirmpasswordField==passwordField && data.username_valid && data.email_valid){
+            submitBtn.removeAttribute("disabled");
+          } 
         }
       });
   }
