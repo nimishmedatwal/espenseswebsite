@@ -91,7 +91,7 @@ class LoginView(View):
                 if user.is_active:
                     auth.login(request, user)
                     messages.success(request, 'Welcome'+user.username)
-                    return render(request, 'authentication/login.html') 
+                    return redirect('expenses')
                 messages.error(request, 'Please activate your account first')
                 return render(request, 'authentication/login.html')
             messages.error(request, 'Invalid credentials')
@@ -114,4 +114,10 @@ class VerificationView(View):
             return redirect('login')
         except Exception as ex:
             pass
+        return redirect('login')
+
+class LogoutView(View):
+    def post(self, request):
+        auth.logout(request)
+        messages.success(request, 'You have successfully logged out')
         return redirect('login')

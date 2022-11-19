@@ -1,4 +1,4 @@
-from .views import RegisterView, LoginView, UsernameValidateView, EmailValidateView, VerificationView
+from .views import RegisterView, LoginView, UsernameValidateView, EmailValidateView, VerificationView,LogoutView
 from django.urls import path
 from django.views.decorators.csrf import csrf_exempt
 urlpatterns = [
@@ -7,4 +7,6 @@ urlpatterns = [
     path('validate-username/', csrf_exempt(UsernameValidateView.as_view()), name='validate-username'),
     path('validate-email/', csrf_exempt(EmailValidateView.as_view()), name='validate-email'),
     path('activate/<uidb64>/<token>', VerificationView.as_view(), name='activate'),
+    path('logout/', LogoutView.as_view(), name='logout'),
+
 ]

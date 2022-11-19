@@ -47,32 +47,9 @@ emailField.addEventListener("keyup", (e) => {
           emailField.classList.remove("is-invalid");
           emailField.classList.add("is-valid");
           emailfeedbackArea.style.display = "none";
-          if(confirmpasswordField==passwordField && data.username_valid && data.email_valid){
-            submitBtn.removeAttribute("disabled");
-          }
+            
         }
       });
-  }
-});
-
-confirmpasswordField.addEventListener("keyup", (e) => {
-  const confirmpasswordVal = e.target.value;
-
-  const passwordVal = passwordField.value;
-  if(confirmpasswordVal.length>0){
-    if (confirmpasswordVal !== passwordVal) {
-      confirmpasswordField.classList.add("is-invalid");
-      passfeedback.innerHTML = `<p>Passwords do not match</p>`;
-      passfeedback.style.display = "block";
-      submitBtn.setAttribute("disabled", "disabled");
-    } else {
-      confirmpasswordField.classList.remove("is-invalid");
-      confirmpasswordField.classList.add("is-valid");
-      passfeedback.style.display = "none";
-      if(confirmpasswordField==passwordField && data.username_valid && data.email_valid){
-        submitBtn.removeAttribute("disabled");
-      }
-    }
   }
 });
 
@@ -99,10 +76,29 @@ usernameField.addEventListener("keyup", (e) => {
           usernameField.classList.remove("is-invalid");
           usernameField.classList.add("is-valid");
           feedbackArea.style.display = "none";
-          if(confirmpasswordField==passwordField && data.username_valid && data.email_valid){
-            submitBtn.removeAttribute("disabled");
-          } 
+          
         }
       });
+  }
+});
+
+confirmpasswordField.addEventListener("keyup", (e) => {
+  const confirmpasswordVal = e.target.value;
+
+  const passwordVal = passwordField.value;
+  if(confirmpasswordVal.length>0){
+    if (confirmpasswordVal !== passwordVal) {
+      confirmpasswordField.classList.add("is-invalid");
+      passfeedback.innerHTML = `<p>Passwords do not match</p>`;
+      passfeedback.style.display = "block";
+      submitBtn.setAttribute("disabled", "disabled");
+    } else {
+      confirmpasswordField.classList.remove("is-invalid");
+      confirmpasswordField.classList.add("is-valid");
+      passfeedback.style.display = "none";
+      if(confirmpasswordVal==passwordVal){
+        submitBtn.removeAttribute("disabled");
+      }
+    }
   }
 });
