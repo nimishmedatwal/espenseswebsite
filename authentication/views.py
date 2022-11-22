@@ -25,6 +25,7 @@ class UsernameValidateView(View):
         
         
         return JsonResponse({'username_valid': 'username is valid'}, status=200)
+        
 class EmailValidateView(View):
     def post(self, request):
         data = json.loads(request.body)
